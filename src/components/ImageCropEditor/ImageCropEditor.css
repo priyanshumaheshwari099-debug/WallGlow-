@@ -1,0 +1,447 @@
+.ice-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    overflow-y: auto;
+    background: rgba(35, 15, 25, 0.78);
+    backdrop-filter: blur(8px);
+}
+
+.ice-editor {
+    width: min(100%, 920px);
+    max-height: calc(100dvh - 36px);
+    overflow-y: auto;
+    background: #fff9f2;
+    color: #40212d;
+    border: 1px solid #ead6d3;
+    border-radius: 22px;
+    box-shadow: 0 25px 80px rgba(25, 8, 16, 0.3);
+    padding: 24px;
+}
+
+.ice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.ice-eyebrow {
+    display: block;
+    color: #94526a;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.ice-header h2 {
+    margin: 0;
+    font-size: clamp(23px, 4vw, 32px);
+    letter-spacing: -1px;
+}
+
+.ice-header p {
+    margin: 8px 0 0;
+    color: #876c72;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.ice-close {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e7d3d3;
+    border-radius: 50%;
+    background: #fff;
+    color: #652b43;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.ice-stage {
+    position: relative;
+    height: min(48vh, 440px);
+    min-height: 240px;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #241a20;
+    isolation: isolate;
+    touch-action: none;
+    user-select: none;
+}
+
+.ice-source-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transform-origin: center center;
+    pointer-events: none;
+    user-select: none;
+}
+
+.ice-dim {
+    position: absolute;
+    z-index: 2;
+    background: rgba(15, 8, 12, 0.55);
+    pointer-events: none;
+}
+
+.ice-crop-box {
+    position: absolute;
+    z-index: 3;
+    box-sizing: border-box;
+    border: 2px solid #fff;
+    outline: 1px solid rgba(55, 20, 35, 0.5);
+    cursor: move;
+    touch-action: none;
+    user-select: none;
+}
+
+.ice-grid-line {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+}
+
+.ice-grid-v1,
+.ice-grid-v2 {
+    top: 0;
+    bottom: 0;
+    width: 1px;
+}
+
+.ice-grid-v1 {
+    left: 33.333%;
+}
+
+.ice-grid-v2 {
+    left: 66.666%;
+}
+
+.ice-grid-h1,
+.ice-grid-h2 {
+    left: 0;
+    right: 0;
+    height: 1px;
+}
+
+.ice-grid-h1 {
+    top: 33.333%;
+}
+
+.ice-grid-h2 {
+    top: 66.666%;
+}
+
+.ice-handle {
+    position: absolute;
+    z-index: 5;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #7b304c;
+    border-radius: 5px;
+    background: #fff9f2;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.22);
+    touch-action: none;
+}
+
+.ice-handle-nw {
+    top: -9px;
+    left: -9px;
+    cursor: nwse-resize;
+}
+
+.ice-handle-n {
+    top: -9px;
+    left: calc(50% - 10px);
+    cursor: ns-resize;
+}
+
+.ice-handle-ne {
+    top: -9px;
+    right: -9px;
+    cursor: nesw-resize;
+}
+
+.ice-handle-e {
+    top: calc(50% - 10px);
+    right: -9px;
+    cursor: ew-resize;
+}
+
+.ice-handle-se {
+    right: -9px;
+    bottom: -9px;
+    cursor: nwse-resize;
+}
+
+.ice-handle-s {
+    bottom: -9px;
+    left: calc(50% - 10px);
+    cursor: ns-resize;
+}
+
+.ice-handle-sw {
+    bottom: -9px;
+    left: -9px;
+    cursor: nesw-resize;
+}
+
+.ice-handle-w {
+    top: calc(50% - 10px);
+    left: -9px;
+    cursor: ew-resize;
+}
+
+.ice-ratio-section,
+.ice-zoom-section {
+    margin-top: 22px;
+}
+
+.ice-control-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.ice-control-title strong {
+    font-size: 14px;
+}
+
+.ice-control-title span {
+    color: #96757d;
+    font-size: 12px;
+}
+
+.ice-ratio-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.ice-ratio-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-width: 82px;
+    padding: 10px 14px;
+    border: 1px solid #e7d4d5;
+    border-radius: 12px;
+    background: #fff;
+    color: #63414c;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ice-ratio-button:hover {
+    border-color: #9e5c72;
+}
+
+.ice-ratio-button.active {
+    background: #762f46;
+    border-color: #762f46;
+    color: #fff;
+}
+
+.ice-ratio-icon {
+    display: inline-flex;
+    width: 17px;
+    height: 17px;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid currentColor;
+    border-radius: 3px;
+    font-size: 15px;
+}
+
+.ice-ratio-9-16 {
+    width: 10px;
+    height: 17px;
+}
+
+.ice-ratio-4-5 {
+    width: 13px;
+    height: 16px;
+}
+
+.ice-ratio-1-1 {
+    width: 15px;
+    height: 15px;
+}
+
+.ice-ratio-16-9 {
+    width: 19px;
+    height: 11px;
+}
+
+.ice-zoom-range {
+    display: block;
+    width: 100%;
+    accent-color: #762f46;
+    cursor: pointer;
+}
+
+.ice-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid #eadbda;
+}
+
+.ice-footer-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.ice-secondary-button,
+.ice-cancel-button,
+.ice-confirm-button {
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 750;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.ice-secondary-button,
+.ice-cancel-button {
+    border: 1px solid #e3cecf;
+    background: #fff;
+    color: #63384a;
+}
+
+.ice-confirm-button {
+    border: 1px solid #762f46;
+    background: #762f46;
+    color: #fff8f0;
+}
+
+.ice-confirm-button:hover {
+    background: #572137;
+}
+
+.ice-confirm-button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+    .ice-backdrop {
+        padding: 0;
+        align-items: stretch;
+    }
+    .ice-editor {
+        width: 100%;
+        max-height: 100dvh;
+        min-height: 100dvh;
+        border: 0;
+        border-radius: 0;
+        padding: 18px 14px;
+        padding-bottom: max(18px, env(safe-area-inset-bottom));
+    }
+    .ice-header {
+        margin-bottom: 16px;
+    }
+    .ice-header h2 {
+        font-size: 25px;
+    }
+    .ice-stage {
+        height: 42dvh;
+        min-height: 230px;
+        max-height: 390px;
+        border-radius: 12px;
+    }
+    .ice-handle {
+        width: 24px;
+        height: 24px;
+    }
+    .ice-handle-nw {
+        top: -11px;
+        left: -11px;
+    }
+    .ice-handle-n {
+        top: -11px;
+        left: calc(50% - 12px);
+    }
+    .ice-handle-ne {
+        top: -11px;
+        right: -11px;
+    }
+    .ice-handle-e {
+        top: calc(50% - 12px);
+        right: -11px;
+    }
+    .ice-handle-se {
+        right: -11px;
+        bottom: -11px;
+    }
+    .ice-handle-s {
+        bottom: -11px;
+        left: calc(50% - 12px);
+    }
+    .ice-handle-sw {
+        bottom: -11px;
+        left: -11px;
+    }
+    .ice-handle-w {
+        top: calc(50% - 12px);
+        left: -11px;
+    }
+    .ice-ratio-section,
+    .ice-zoom-section {
+        margin-top: 19px;
+    }
+    .ice-ratio-list {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 6px;
+    }
+    .ice-ratio-button {
+        min-width: 0;
+        padding: 10px 3px;
+        flex-direction: column;
+        gap: 5px;
+        font-size: 11px;
+    }
+    .ice-footer {
+        align-items: stretch;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .ice-secondary-button {
+        width: 100%;
+    }
+    .ice-footer-actions {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+    }
+    .ice-cancel-button,
+    .ice-confirm-button {
+        padding: 0 10px;
+    }
+}

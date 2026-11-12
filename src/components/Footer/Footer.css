@@ -1,0 +1,336 @@
+.wg-footer,
+.wg-footer * {
+    box-sizing: border-box;
+}
+
+.wg-footer {
+    background: #502033;
+    color: #fffaf3;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+.wg-footer::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    top: -260px;
+    right: -130px;
+    border-radius: 50%;
+    background: rgba(224, 151, 168, 0.07);
+    pointer-events: none;
+}
+
+.wg-footer-container {
+    position: relative;
+    max-width: 1500px;
+    margin: auto;
+    padding: 75px 5% 0;
+}
+
+.wg-footer-top {
+    display: grid;
+    grid-template-columns: 1.1fr 1.4fr;
+    gap: 90px;
+    padding-bottom: 65px;
+}
+
+.wg-footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: #fffaf3;
+    text-decoration: none;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.wg-footer-logo-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    background: #a75e76;
+    color: white;
+}
+
+.wg-footer-logo-dot {
+    color: #e9a7b8;
+}
+
+.wg-footer-brand-section h2 {
+    margin: 32px 0 18px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(27px, 3vw, 43px);
+    font-weight: 500;
+    line-height: 1.22;
+    letter-spacing: -1px;
+}
+
+.wg-footer-brand-section h2 em {
+    color: #e9a7b8;
+    font-weight: 400;
+}
+
+.wg-footer-brand-section>p {
+    max-width: 410px;
+    color: #dbc0c9;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.wg-footer-socials {
+    display: flex;
+    gap: 11px;
+    margin-top: 27px;
+}
+
+.wg-footer-socials a {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255, 250, 243, 0.18);
+    border-radius: 12px;
+    color: #f9e5e9;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.wg-footer-socials a:hover {
+    background: #e4a0b2;
+    color: #502033;
+    border-color: #e4a0b2;
+    transform: translateY(-3px);
+}
+
+.wg-footer-links-area {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 35px;
+    padding-top: 10px;
+}
+
+.wg-footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.wg-footer-column h3 {
+    margin: 0 0 10px;
+    font-size: 13px;
+    font-weight: 750;
+    letter-spacing: 1.2px;
+    color: #f7c4d0;
+    text-transform: uppercase;
+}
+
+.wg-footer-column a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #e0cbd0;
+    font-size: 13px;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.wg-footer-column a:hover {
+    color: #fff;
+    transform: translateX(4px);
+}
+
+.wg-footer-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 35px 42px;
+    border: 1px solid rgba(255, 250, 243, 0.14);
+    border-radius: 22px;
+    background: linear-gradient(110deg, #76364d, #8f4c63);
+}
+
+.wg-footer-banner-label {
+    display: block;
+    margin-bottom: 12px;
+    color: #f4b8c8;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.wg-footer-banner h3 {
+    margin: 0 0 9px;
+    font-family: Georgia, serif;
+    font-size: clamp(22px, 2.5vw, 30px);
+    font-weight: 500;
+}
+
+.wg-footer-banner p {
+    margin: 0;
+    color: #eed6dd;
+    font-size: 13px;
+}
+
+.wg-footer-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-shrink: 0;
+    padding: 16px 23px;
+    border-radius: 12px;
+    background: #fffaf3;
+    color: #702d45;
+    font-size: 13px;
+    font-weight: 750;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.wg-footer-cta:hover {
+    background: #f9dbe3;
+    transform: translateY(-2px);
+}
+
+.wg-footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 27px 0;
+    margin-top: 45px;
+    border-top: 1px solid rgba(255, 250, 243, 0.13);
+}
+
+.wg-footer-bottom p {
+    margin: 0;
+    color: #cdb1bb;
+    font-size: 12px;
+}
+
+.wg-footer-made {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.wg-footer-made svg {
+    color: #e9a7b8;
+}
+
+.wg-footer-top-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 0;
+    border: 0;
+    background: transparent;
+    color: #f3dce3;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.wg-footer-top-btn:hover {
+    color: #fff;
+}
+
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+    .wg-footer-top {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+    .wg-footer-links-area {
+        max-width: 750px;
+    }
+    .wg-footer-container {
+        padding-top: 60px;
+    }
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    .wg-footer-container {
+        padding: 48px 5% 0;
+    }
+    .wg-footer-top {
+        gap: 38px;
+        padding-bottom: 42px;
+    }
+    .wg-footer-logo {
+        font-size: 26px;
+    }
+    .wg-footer-brand-section h2 {
+        margin-top: 25px;
+        font-size: 31px;
+    }
+    .wg-footer-brand-section>p {
+        font-size: 13px;
+    }
+    .wg-footer-links-area {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 32px 20px;
+    }
+    .wg-footer-column {
+        gap: 13px;
+    }
+    .wg-footer-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 27px 23px;
+        border-radius: 17px;
+    }
+    .wg-footer-cta {
+        width: 100%;
+    }
+    .wg-footer-bottom {
+        margin-top: 30px;
+        gap: 15px;
+        justify-content: flex-start;
+    }
+}
+
+
+/* EXTRA SMALL PHONES */
+
+@media (max-width: 380px) {
+    .wg-footer-links-area {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px 12px;
+    }
+    .wg-footer-column a {
+        font-size: 12px;
+    }
+    .wg-footer-brand-section h2 {
+        font-size: 27px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wg-footer *,
+    .wg-footer *::before,
+    .wg-footer *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+}

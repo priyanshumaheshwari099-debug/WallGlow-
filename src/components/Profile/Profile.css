@@ -1,0 +1,216 @@
+.wg-profile {
+    position: relative;
+    z-index: 100;
+}
+
+.wg-profile-trigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 245px;
+    padding: 7px 10px;
+    color: #542a3a;
+    background: #fffaf5;
+    border: 1px solid #ead9d3;
+    border-radius: 13px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.wg-profile-trigger:hover {
+    border-color: #b87588;
+    background: #fff5f1;
+}
+
+.wg-profile-avatar,
+.wg-profile-dropdown-avatar {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    color: #fffaf5;
+    background: #793d52;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.wg-profile-avatar {
+    width: 38px;
+    height: 38px;
+    font-size: 15px;
+}
+
+.wg-profile-avatar img,
+.wg-profile-dropdown-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wg-profile-trigger-text {
+    display: flex;
+    min-width: 0;
+    flex: 1;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.wg-profile-caption {
+    color: #a16d7c;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.wg-profile-name {
+    overflow: hidden;
+    max-width: 165px;
+    color: #542a3a;
+    font-size: 12px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wg-profile-chevron {
+    flex-shrink: 0;
+    color: #956477;
+    transition: transform 0.2s;
+}
+
+.wg-profile-chevron.active {
+    transform: rotate(180deg);
+}
+
+.wg-profile-backdrop {
+    position: fixed;
+    z-index: 101;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 0;
+    cursor: default;
+}
+
+.wg-profile-dropdown {
+    position: absolute;
+    z-index: 102;
+    top: calc(100% + 12px);
+    right: 0;
+    width: 285px;
+    overflow: hidden;
+    padding: 12px;
+    background: #fffdf9;
+    border: 1px solid #ead9d3;
+    border-radius: 16px;
+    box-shadow: 0 18px 50px #4825311c;
+    animation: wg-profile-appear 0.18s ease-out;
+}
+
+@keyframes wg-profile-appear {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wg-profile-dropdown-head {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 12px 8px 16px;
+    border-bottom: 1px solid #f0e5df;
+}
+
+.wg-profile-dropdown-avatar {
+    width: 43px;
+    height: 43px;
+    font-size: 17px;
+}
+
+.wg-profile-user-info {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.wg-profile-user-info strong,
+.wg-profile-user-info span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wg-profile-user-info strong {
+    color: #542a3a;
+    font-size: 13px;
+}
+
+.wg-profile-user-info span {
+    color: #957e80;
+    font-size: 11px;
+}
+
+.wg-profile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 10px;
+}
+
+.wg-profile-menu a,
+.wg-profile-menu>button {
+    display: flex;
+    width: 100%;
+    min-height: 43px;
+    align-items: center;
+    gap: 11px;
+    padding: 0 12px;
+    color: #63414b;
+    background: transparent;
+    border: 0;
+    border-radius: 9px;
+    text-decoration: none;
+    text-align: left;
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.wg-profile-menu a svg,
+.wg-profile-menu>button svg {
+    color: #a05b72;
+    flex-shrink: 0;
+}
+
+.wg-profile-menu a:hover,
+.wg-profile-menu>button:hover {
+    color: #74394e;
+    background: #f8eee9;
+}
+
+@media (max-width: 650px) {
+    .wg-profile-trigger {
+        max-width: 200px;
+        gap: 7px;
+        padding: 6px;
+    }
+    .wg-profile-avatar {
+        width: 33px;
+        height: 33px;
+    }
+    .wg-profile-name {
+        max-width: 120px;
+        font-size: 11px;
+    }
+    .wg-profile-dropdown {
+        width: min(285px, calc(100vw - 28px));
+    }
+}
