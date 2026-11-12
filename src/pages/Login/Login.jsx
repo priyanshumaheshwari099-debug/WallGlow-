@@ -6,7 +6,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import "./Login.css";
 import Footer from "../../components/Footer/Footer";
 
-const API = "http://localhost:5000/api/auth";
+const API = "https://wallglow-backend.onrender.com/api/auth";
 
 export default function Login() {
   const navigate = useNavigate();

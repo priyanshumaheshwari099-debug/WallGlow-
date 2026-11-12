@@ -1,4 +1,4 @@
-const API_BASE = "http://localhost:5000/api";
+const API_BASE = "https://wallglow-backend.onrender.com/api";
 
 async function apiRequest(endpoint, options = {}) {
     const token = localStorage.getItem("token");

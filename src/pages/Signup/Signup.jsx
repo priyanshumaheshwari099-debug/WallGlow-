@@ -5,7 +5,7 @@ import { auth, googleProvider } from "../../firebase";
 import Navbar from "../../components/Navbar/Navbar";
 import "./Signup.css";
 
-const API = "http://localhost:5000/api/auth";
+const API = "https://wallglow-backend.onrender.com/api/auth";
 
 export default function Signup() {
   const navigate = useNavigate();

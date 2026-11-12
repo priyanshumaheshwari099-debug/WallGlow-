@@ -9,7 +9,7 @@ import Footer from "../../components/Footer/Footer";
 import ImageOwnership from "../../components/ImageOwnership/ImageOwnership";
 import "./PaintStudio.css";
 
-const API_URL = "http://localhost:5000/api/ai/redesign";
+const API_URL = "https://wallglow-backend.onrender.com/api/ai/redesign";
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 
 const palettes = [
